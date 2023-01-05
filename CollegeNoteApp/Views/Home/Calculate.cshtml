@@ -1,0 +1,43 @@
+﻿@model CalculateViewModel
+
+<div>
+	<h1 class="display-3">- Student Success Status -</h1><hr />
+</div>
+
+<form method="post">
+	<div class="row mt-4">
+		<div class="col-5">
+			<label asp-for="Exam1" class="form-label">Exam - 1</label>
+			<input asp-for="Exam1" type="number" class="form-control" />
+			<span class="text-danger text-sm-start" asp-validation-for="Exam1"></span>
+		</div>
+		<div class="col-5 offset-2">
+			<label asp-for="Percent1" class="form-label">Percent - 1</label>
+			<input asp-for="Percent1" type="number" class="form-control" />
+			<span class="text-danger text-sm-start" asp-validation-for="Percent1"></span>
+		</div>
+		<div class="col-5 mt-4">
+			<label asp-for="Exam2" class="form-label">Exam - 2</label>
+			<input asp-for="Exam2" type="number" class="form-control" />
+			<span class="text-danger text-sm-start" asp-validation-for="Exam2"></span>
+		</div>
+		<div class="col-5 offset-2 mt-4">
+			<label asp-for="Percent2" class="form-label">Percent - 2</label>
+			<input asp-for="Percent2" type="number" class="form-control" />
+			<span class="text-danger text-sm-start" asp-validation-for="Percent2"></span>
+		</div>
+		<div class="mt-4 mb-3">
+			<button type="submit" class="btn btn-primary">Calculate</button>
+		</div><hr />
+		<div class="mt-4">
+			<h5>
+				Average Exam Score : @Model?.AverageExamScore
+			</h5>
+		</div>
+		<div class="mt-4">
+			<h5>
+				Exam Success Status : @Model?.AverageExamStatus
+			</h5>
+		</div>
+	</div>
+</form>
